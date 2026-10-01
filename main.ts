@@ -2,7 +2,7 @@
  * micro:bit P14/P15 UART를 이용해 ESP32와 통신하는 확장
  * - P14 = TX
  * - P15 = RX
- * - 9600bps
+ * - 115200bps
  *
  * ESP32 Wi-Fi/Server 기능과 TB6612FNG 모터 제어 기능을 함께 사용합니다.
  */
@@ -14,7 +14,7 @@ namespace esp32wifiuart {
     let started = false
 
     /**
-     * P14=TX, P15=RX, 9600bps로 UART를 시작하고
+     * P14=TX, P15=RX, 115200bps로 UART를 시작하고
      * ESP32에 micro:bit 시작 신호를 보냅니다.
      */
     //% blockId=esp32wifiuart_start
@@ -24,7 +24,7 @@ namespace esp32wifiuart {
         serial.redirect(
             SerialPin.P14,
             SerialPin.P15,
-            BaudRate.BaudRate9600
+            BaudRate.BaudRate115200
         )
 
         serial.setRxBufferSize(128)
